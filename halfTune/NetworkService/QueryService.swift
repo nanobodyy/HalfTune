@@ -61,7 +61,7 @@ class QueryService {
         
         
         
-        guard let array = response?["result"] as? [Any] else {
+        guard let array = response?["results"] as? [Any] else {
             errorMessage += "Dictionary does not contain results key\n"
             return
         }
