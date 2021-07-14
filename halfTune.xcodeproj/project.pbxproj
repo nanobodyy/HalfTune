@@ -58,14 +58,14 @@
 		996B906C269EED5000F87509 /* halfTune */ = {
 			isa = PBXGroup;
 			children = (
-				996B908B269EF4E200F87509 /* Model */,
-				996B9087269EF00A00F87509 /* NetworkService */,
 				996B906D269EED5000F87509 /* AppDelegate.swift */,
 				996B906F269EED5000F87509 /* SceneDelegate.swift */,
+				996B908B269EF4E200F87509 /* Model */,
+				996B9087269EF00A00F87509 /* NetworkService */,
+				996B9083269EEF7600F87509 /* SearchViewController.swift */,
 				996B9076269EED5300F87509 /* Assets.xcassets */,
 				996B9078269EED5300F87509 /* LaunchScreen.storyboard */,
 				996B907B269EED5300F87509 /* Info.plist */,
-				996B9083269EEF7600F87509 /* SearchViewController.swift */,
 			);
 			path = halfTune;
 			sourceTree = "<group>";
