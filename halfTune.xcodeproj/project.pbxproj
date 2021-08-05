@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		9904625926B42F4B001D54F9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9904625826B42F4B001D54F9 /* SearchViewController.swift */; };
 		9953843726BBEB800097BC28 /* TuneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9953843626BBEB800097BC28 /* TuneCell.swift */; };
-		9953844026BBFDE40097BC28 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9953843F26BBFDE40097BC28 /* SearchBar.swift */; };
+		9953844026BBFDE40097BC28 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9953843F26BBFDE40097BC28 /* SearchView.swift */; };
 		996B906E269EED5000F87509 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996B906D269EED5000F87509 /* AppDelegate.swift */; };
 		996B9070269EED5000F87509 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996B906F269EED5000F87509 /* SceneDelegate.swift */; };
 		996B9077269EED5300F87509 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 996B9076269EED5300F87509 /* Assets.xcassets */; };
@@ -21,7 +21,7 @@
 /* Begin PBXFileReference section */
 		9904625826B42F4B001D54F9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		9953843626BBEB800097BC28 /* TuneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneCell.swift; sourceTree = "<group>"; };
-		9953843F26BBFDE40097BC28 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		9953843F26BBFDE40097BC28 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		996B906A269EED5000F87509 /* halfTune.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = halfTune.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		996B906D269EED5000F87509 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		996B906F269EED5000F87509 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				9953843626BBEB800097BC28 /* TuneCell.swift */,
-				9953843F26BBFDE40097BC28 /* SearchBar.swift */,
+				9953843F26BBFDE40097BC28 /* SearchView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -177,7 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9953844026BBFDE40097BC28 /* SearchBar.swift in Sources */,
+				9953844026BBFDE40097BC28 /* SearchView.swift in Sources */,
 				9904625926B42F4B001D54F9 /* SearchViewController.swift in Sources */,
 				9953843726BBEB800097BC28 /* TuneCell.swift in Sources */,
 				996B9089269EF05500F87509 /* QueryService.swift in Sources */,

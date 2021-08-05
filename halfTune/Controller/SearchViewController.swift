@@ -10,20 +10,25 @@ import UIKit
 class SearchViewController: UIViewController {
     
     var searchResultTableView = UITableView()
-//    var searchBar: UISearchBar = {
-//        let search = UISearchBar()
-//        //search.barStyle = .black
-//        search.sizeToFit()
-//        search.placeholder = "Song name or artist"
-//        return search
-//    }()
-    let searchBar = SearchBar()
+    let searchView = SearchView()
     
+    lazy var tapRecognizer: UITapGestureRecognizer = {
+      var recognizer = UITapGestureRecognizer(target:self, action: #selector(dismissKeyboard))
+      return recognizer
+    }()
+    
+    private var searchBarheight = 56
+
+    @objc func dismissKeyboard() {
+        searchView.searchBar.resignFirstResponder()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
+        
+        searchView.searchBar.delegate = self
         
         configureTableView()
         setupConstraint()
@@ -39,18 +44,19 @@ class SearchViewController: UIViewController {
     }
     
     func setupConstraint() {
+        
+        view.addSubview(searchView)
+        searchView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        searchView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        searchView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
         view.addSubview(searchResultTableView)
         searchResultTableView.translatesAutoresizingMaskIntoConstraints = false
-        searchResultTableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor).isActive = true
+        searchResultTableView.topAnchor.constraint(equalTo: searchView.bottomAnchor).isActive = true
         searchResultTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         searchResultTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         searchResultTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
-        view.addSubview(searchBar)
-        searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        searchBar.widthAnchor.constraint(equalToConstant: 375).isActive = true
     }
     
 }
@@ -73,4 +79,13 @@ extension SearchViewController: UITableViewDelegate {
 
 extension SearchViewController: UISearchBarDelegate {
     
+    
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        view.addGestureRecognizer(tapRecognizer)
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        view.removeGestureRecognizer(tapRecognizer)
+    }
 }

@@ -7,14 +7,15 @@
 
 import UIKit
 
-class SearchBar: UIView {
+class SearchView: UIView {
     
-    let searchBar = UISearchBar()
+    var searchBar = UISearchBar()
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureUI()
-        translatesAutoresizingMaskIntoConstraints = false
+        setupConstraint()
     }
     
     required init?(coder: NSCoder) {
@@ -22,15 +23,20 @@ class SearchBar: UIView {
     }
     
     func configureUI() {
-        backgroundColor = UIColor(red: 230/255, green: 63/255, blue: 69/255, alpha: 1)
+        //backgroundColor = UIColor(red: 230/255, green: 63/255, blue: 69/255, alpha: 1)
+        //searchBar.becomeFirstResponder()
         
-        searchBar.becomeFirstResponder()
         searchBar.sizeToFit()
-        searchBar.showsCancelButton = true
+        translatesAutoresizingMaskIntoConstraints = false
         
+    }
+    
+    func setupConstraint() {
         addSubview(searchBar)
         searchBar.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         searchBar.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        searchBar.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        searchBar.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
 }
 
