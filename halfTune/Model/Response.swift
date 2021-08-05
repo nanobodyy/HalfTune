@@ -30,3 +30,12 @@ struct Response {
         }
     }
 }
+
+struct Track {
+    let artistName: String?
+    let trackName: String?
+    let previewUrl: URL?
+    let index: Int
+    
+    var downloaded = false
+}

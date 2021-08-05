@@ -9,9 +9,9 @@ import Foundation
 
 class QueryService {
     
-    var dataTask: URLSessionDataTask?
-    var errorMessage = " "
-    let session = URLSession(configuration: .default)
+    private var dataTask: URLSessionDataTask?
+    private var errorMessage = " "
+    private let session = URLSession(configuration: .default)
     
     
     
