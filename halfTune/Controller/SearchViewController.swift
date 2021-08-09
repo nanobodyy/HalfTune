@@ -27,8 +27,11 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
+    
         
-        searchView.searchBar.delegate = self
+        view.addSubview(searchView)
+        searchView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        searchView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         
         configureTableView()
         setupConstraint()
@@ -40,23 +43,24 @@ class SearchViewController: UIViewController {
         searchResultTableView.register(TuneCell.self, forCellReuseIdentifier: TuneCell.reuseID)
         searchResultTableView.tableHeaderView?.tintColor = .red
         //searchResultTableView.tableHeaderView= searchBar
-        
+
     }
     
     func setupConstraint() {
-        
+
         view.addSubview(searchView)
         searchView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         searchView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         searchView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        
+        searchView.heightAnchor.constraint(equalToConstant: 56).isActive = true
+
         view.addSubview(searchResultTableView)
         searchResultTableView.translatesAutoresizingMaskIntoConstraints = false
         searchResultTableView.topAnchor.constraint(equalTo: searchView.bottomAnchor).isActive = true
         searchResultTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         searchResultTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         searchResultTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        
+
     }
     
 }
@@ -69,6 +73,7 @@ extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = searchResultTableView.dequeueReusableCell(withIdentifier: TuneCell.reuseID, for: indexPath) as! TuneCell
         
+        
         return cell
     }
 }
@@ -79,6 +84,9 @@ extension SearchViewController: UITableViewDelegate {
 
 extension SearchViewController: UISearchBarDelegate {
     
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        dismissKeyboard()
+    }
     
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {

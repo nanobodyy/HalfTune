@@ -15,7 +15,6 @@ class QueryService {
     
     
     
-    //var tracks = [Track]()
     typealias JSONDictionary = [String: Any]
     typealias QueryReslt = ([Track]?, String) -> Void
     
@@ -42,7 +41,7 @@ class QueryService {
                       response.statusCode == 200 {
                 complition(self.updateSearchResult(with: data), self.errorMessage)
             }
-            //complition(self.tracks, self.errorMessage)
+            complition(nil, self.errorMessage)
             
         })
         dataTask?.resume()

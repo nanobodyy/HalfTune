@@ -10,12 +10,14 @@ import UIKit
 class SearchView: UIView {
     
     var searchBar = UISearchBar()
+    //var tableView = UITableView()
     
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureUI()
         setupConstraint()
+        translatesAutoresizingMaskIntoConstraints = false
     }
     
     required init?(coder: NSCoder) {
@@ -25,18 +27,25 @@ class SearchView: UIView {
     func configureUI() {
         //backgroundColor = UIColor(red: 230/255, green: 63/255, blue: 69/255, alpha: 1)
         //searchBar.becomeFirstResponder()
-        
+    
         searchBar.sizeToFit()
-        translatesAutoresizingMaskIntoConstraints = false
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
         
     }
     
+//    func setupConstraint() {
+//        addSubview(searchBar)
+//        searchBar.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+//        searchBar.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+//        searchBar.topAnchor.constraint(equalTo: topAnchor).isActive = true
+//        searchBar.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+//    }
+    
     func setupConstraint() {
         addSubview(searchBar)
-        searchBar.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        searchBar.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         searchBar.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        searchBar.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        searchBar.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        searchBar.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
     }
 }
 
