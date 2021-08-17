@@ -11,6 +11,8 @@ class TuneCell: UITableViewCell {
     
     static let reuseID = "TuneCell"
     
+    var viewModel: TuneCellViewModel?
+    
     var titleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
@@ -34,6 +36,7 @@ class TuneCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupConstraints()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -48,10 +51,14 @@ class TuneCell: UITableViewCell {
         contentView.addSubview(artistLabel)
         artistLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 1).isActive = true
         artistLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 14).isActive = true
+        artistLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
     }
     
-    func configureUI(with: Track) {
-    
+    func configureUI() {
+        guard let track = viewModel?.track else { return }
+        
+        titleLabel.text = track.trackName
+        titleLabel.text = track.artistName
     }
 }
 

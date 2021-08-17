@@ -16,7 +16,7 @@ class QueryService {
     
     
     typealias JSONDictionary = [String: Any]
-    typealias QueryReslt = ([Track]?, String) -> Void
+    typealias QueryReslt = (Response?, String) -> Void
     
     func getSearchResult(searchTerm: String, complition:@escaping QueryReslt) {
         
@@ -47,13 +47,13 @@ class QueryService {
         dataTask?.resume()
     }
     
-    func updateSearchResult(with data: Data) -> [Track]? {
+    func updateSearchResult(with data: Data) -> Response? {
         
         do {
             guard let  json = try JSONSerialization.jsonObject(with: data, options: []) as? JSONDictionary else { return nil}
             
             let response = Response(with: json)
-            return response.results
+            return response
             
         } catch let error as NSError {
             errorMessage = "JSONSerialization error: " + error.localizedDescription
