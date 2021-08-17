@@ -81,7 +81,11 @@ extension TunesViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchText = searchBar.text else { return }
         viewModel?.fetchTunes(name: searchText)
-        searchResultTableView.reloadData()
+        viewModel?.didTunes = { tunes in
+            DispatchQueue.main.sync {
+                self.searchResultTableView.reloadData()
+            }
+        }
     }
 }
 

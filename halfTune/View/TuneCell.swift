@@ -58,7 +58,7 @@ class TuneCell: UITableViewCell {
         guard let track = viewModel?.track else { return }
         
         titleLabel.text = track.trackName
-        titleLabel.text = track.artistName
+        artistLabel.text = track.artistName
     }
 }
 
