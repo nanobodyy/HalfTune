@@ -29,6 +29,7 @@ class TunesViewController: UIViewController {
         view.addSubview(searchResultTableView)
         configureTableView()
         configureNavBar()
+        searchBar.searchTextField.backgroundColor = .white
     }
     
     func configureTableView() {
@@ -81,7 +82,7 @@ extension TunesViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchText = searchBar.text else { return }
         viewModel?.fetchTunes(name: searchText)
-        viewModel?.didTunes = { tunes in
+        viewModel?.didData = { _ in
             DispatchQueue.main.sync {
                 self.searchResultTableView.reloadData()
             }
@@ -98,8 +99,7 @@ extension TunesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = searchResultTableView.dequeueReusableCell(withIdentifier: TuneCell.reuseID) as! TuneCell
         
-        let cellViewModel = viewModel?.createViewModelForCell(indexPath: indexPath.row)
-        cell.viewModel = cellViewModel
+        cell.viewModel = viewModel?.createViewModelForCell(indexPath: indexPath.row)
         cell.configureUI()
         
         return cell
@@ -108,4 +108,10 @@ extension TunesViewController: UITableViewDataSource {
 
 extension TunesViewController: UITableViewDelegate {
     
+}
+
+extension TunesViewController: URLSessionDownloadDelegate {
+    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
+        <#code#>
+    }
 }

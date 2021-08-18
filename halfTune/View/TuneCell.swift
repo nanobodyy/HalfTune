@@ -33,6 +33,8 @@ class TuneCell: UITableViewCell {
         return label
     }()
     
+    var downloadButton
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupConstraints()
@@ -51,14 +53,12 @@ class TuneCell: UITableViewCell {
         contentView.addSubview(artistLabel)
         artistLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 1).isActive = true
         artistLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 14).isActive = true
-        artistLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10).isActive = true
+        artistLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8).isActive = true
     }
     
     func configureUI() {
-        guard let track = viewModel?.track else { return }
-        
-        titleLabel.text = track.trackName
-        artistLabel.text = track.artistName
+        titleLabel.text = viewModel?.title
+        artistLabel.text = viewModel?.artist
     }
 }
 

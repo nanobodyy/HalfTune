@@ -24,7 +24,7 @@ class QueryService {
         
         
         var urlComponents = URLComponents(string: "https://itunes.apple.com/search")
-        urlComponents?.query = "media=music&entity=song&term=\(searchTerm)"
+        urlComponents?.query = "media=music&entity=song&term=\(searchTerm)&limit=100."
         
         guard let url = urlComponents?.url else {return}
         

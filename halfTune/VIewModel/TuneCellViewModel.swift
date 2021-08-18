@@ -15,4 +15,13 @@ class TuneCellViewModel {
         self.track = track
     }
     
+    var title: String {
+        guard let name = track.trackName else { return "Unnkowed" }
+        return name
+    }
+    
+    var artist: String {
+        guard let artist = track.artistName else { return "Unnkowed"}
+        return artist
+    }
 }

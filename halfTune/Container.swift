@@ -7,8 +7,8 @@
 
 import Foundation
 
-class DI {
-    static func createVC() -> TunesViewController {
+class Container {
+    static func createTunesVC() -> TunesViewController {
         let vc = TunesViewController()
         let viewModel = TunesVCViewModel()
         vc.viewModel = viewModel

@@ -10,7 +10,7 @@ import Foundation
 class TunesVCViewModel {
     private let queryService = QueryService()
     
-    var didTunes: (([Track]) -> Void)?
+    var didData: ((TunesVCViewModel) -> Void)?
     var result = [Track]()
     var resultCount: Int?
     var selectedIndexPath = 0
@@ -20,7 +20,7 @@ class TunesVCViewModel {
             guard let response = response else { return}
             self.resultCount = response.resultCount
             self.result = response.results
-            self.didTunes?(response.results)
+            self.didData?(self)
         }
     }
     
@@ -30,3 +30,4 @@ class TunesVCViewModel {
         return cellViewModel
     }
 }
+

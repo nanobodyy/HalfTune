@@ -17,7 +17,9 @@
 		9973598626CBD20200AEEEED /* TunesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9973598526CBD20200AEEEED /* TunesViewController.swift */; };
 		9973598926CBF5AD00AEEEED /* TunesVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9973598826CBF5AD00AEEEED /* TunesVCViewModel.swift */; };
 		9973598C26CBFA5E00AEEEED /* TuneCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9973598B26CBFA5E00AEEEED /* TuneCellViewModel.swift */; };
-		9973598F26CC03BC00AEEEED /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9973598E26CC03BC00AEEEED /* DI.swift */; };
+		9973598F26CC03BC00AEEEED /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9973598E26CC03BC00AEEEED /* Container.swift */; };
+		9973599426CD171500AEEEED /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9973599326CD171500AEEEED /* Download.swift */; };
+		9973599726CD17DE00AEEEED /* DownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9973599626CD17DE00AEEEED /* DownloadService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +35,9 @@
 		9973598526CBD20200AEEEED /* TunesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunesViewController.swift; sourceTree = "<group>"; };
 		9973598826CBF5AD00AEEEED /* TunesVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunesVCViewModel.swift; sourceTree = "<group>"; };
 		9973598B26CBFA5E00AEEEED /* TuneCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneCellViewModel.swift; sourceTree = "<group>"; };
-		9973598E26CC03BC00AEEEED /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
+		9973598E26CC03BC00AEEEED /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		9973599326CD171500AEEEED /* Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
+		9973599626CD17DE00AEEEED /* DownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +72,7 @@
 			children = (
 				996B906D269EED5000F87509 /* AppDelegate.swift */,
 				996B906F269EED5000F87509 /* SceneDelegate.swift */,
-				9973598E26CC03BC00AEEEED /* DI.swift */,
+				9973598E26CC03BC00AEEEED /* Container.swift */,
 				996B9087269EF00A00F87509 /* NetworkService */,
 				996B908B269EF4E200F87509 /* Model */,
 				99F5CE6C26B4199700AFB55A /* VIewModel */,
@@ -84,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				996B9088269EF05500F87509 /* QueryService.swift */,
+				9973599626CD17DE00AEEEED /* DownloadService.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -92,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				996B908C269EF4FE00F87509 /* Response.swift */,
+				9973599326CD171500AEEEED /* Download.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,13 +191,15 @@
 			files = (
 				9973598926CBF5AD00AEEEED /* TunesVCViewModel.swift in Sources */,
 				9953843726BBEB800097BC28 /* TuneCell.swift in Sources */,
-				9973598F26CC03BC00AEEEED /* DI.swift in Sources */,
+				9973598F26CC03BC00AEEEED /* Container.swift in Sources */,
 				9973598C26CBFA5E00AEEEED /* TuneCellViewModel.swift in Sources */,
 				996B9089269EF05500F87509 /* QueryService.swift in Sources */,
 				996B908D269EF4FE00F87509 /* Response.swift in Sources */,
 				996B906E269EED5000F87509 /* AppDelegate.swift in Sources */,
 				9973598626CBD20200AEEEED /* TunesViewController.swift in Sources */,
 				996B9070269EED5000F87509 /* SceneDelegate.swift in Sources */,
+				9973599426CD171500AEEEED /* Download.swift in Sources */,
+				9973599726CD17DE00AEEEED /* DownloadService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
